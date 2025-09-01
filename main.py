@@ -48,15 +48,8 @@ def binary_txt_to_carbon_v1_1_schematic(input_file: str) -> None:
             schematic.setBlock(placement_coord, "white_terracotta")
 
     # Extract filename without extension and save with .schem
-    output_file = os.path.splitext(input_file)[0] + ".schem"
-    schematic.save("schematics", "schem", mcschematic.Version.JE_1_21_5)
-
-
-def main2():    
-    schem = mcschematic.MCSchematic()
-    barrel = mcschematic.BlockDataDB.BARREL.fromSS(10)
-    schem.setBlock((0, -1, 0), barrel)
-    schem.save("schematics", "schem", mcschematic.Version.JE_1_21_5)
+    output_file = os.path.splitext(input_file)[0]
+    schematic.save("", output_file, mcschematic.Version.JE_1_21_5)
     
 
 if __name__ == "__main__":
