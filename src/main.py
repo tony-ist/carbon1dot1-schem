@@ -1,6 +1,7 @@
 import mcschematic
 import os
 import sys
+from barrel import BARREL
 
 
 def binary_txt_to_carbon_v1_1_schematic(input_file: str) -> None:
@@ -43,7 +44,13 @@ def binary_txt_to_carbon_v1_1_schematic(input_file: str) -> None:
         # Move schematic one down so that it can be pasted by standing on the first barrel
         placement_coord = (coord_list[i][0], coord_list[i][1] - 1, coord_list[i][2])
         if ss > 0:
-            schematic.setBlock(placement_coord, mcschematic.BlockDataDB.BARREL.fromSS(ss))
+            # /give @s barrel[container=[{slot:0,item:{id:apple,count:64}}]]
+            # testbarrel = """minecraft:barrel[open=false,facing=up]{CustomName:'testbarrel',Items:[{Count:64,Slot:0b,id:"minecraft:redstone"}]}"""
+            # testbarrel = """minecraft:barrel[open=false,facing=up]{'item':{'slot':0,'item':{'id':'minecraft:redstone','count':64}}}"""
+            # testbarrel = """minecraft:barrel[open=false,facing=up,container=[{'slot':0,'item':{'id':'minecraft:redstone','count':64}}]]"""
+            # testbarrel = "minecraft:barrel[open=false,facing=up]{Items:[{Slot:0b,id:'minecraft:redstone',count:64b}]}"
+            # schematic.setBlock(placement_coord, testbarrel)
+            schematic.setBlock(placement_coord, BARREL.fromSS(ss))
         else:
             schematic.setBlock(placement_coord, "white_terracotta")
 
