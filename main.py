@@ -39,7 +39,7 @@ def binary_txt_to_carbon_v1_1_schematic(input_file: str) -> None:
 
     # Generate coord combinations in order and place the corresponding ss barrels
     coord_list = [(x, -y, z) for x in x_coord_offset_list for z in z_coord_offset_list for y in y_coord_offset_list]
-    for i, ss in enumerate(barrel_ss_values):\
+    for i, ss in enumerate(barrel_ss_values):
         # Move schematic one down so that it can be pasted by standing on the first barrel
         placement_coord = (coord_list[i][0], coord_list[i][1] - 1, coord_list[i][2])
         if ss > 0:
