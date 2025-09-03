@@ -5,5 +5,5 @@ Authored by drz, modified by Tony for MC version 1.21.5
 ## Usage
 
 ```
-uv run src/main.py schematics/schem.txt
+uv run src/carbon-schem-gen-1.21.0.py schematics/schem.txt
 ```
